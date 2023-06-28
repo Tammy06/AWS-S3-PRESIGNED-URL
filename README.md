@@ -67,7 +67,7 @@ $headers = [
 $client = new \GuzzleHttp\Client(['headers' => $headers]);
 
 $result = $client->request('PUT', $signedUrl, [
-  'body' => file_get_content($filePath)
+  'body' => file_get_contents($filePath)
 ]);
 
 $response = $result->getBody()->getContents();
